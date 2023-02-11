@@ -1,0 +1,118 @@
+.btn_start,
+.quiz-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.btn_start.active{
+    display: none;
+}
+.quiz-box.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: translate(-50%, -50%) scale(1);
+}
+.quiz-box {
+    width: 550px;
+    transform: translate(-50%, -50%) scale(0.7);
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+.quiz-box header .title {
+    font-size: 20px;
+    font-weight: 600;
+}
+.quiz-box .question-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+.quiz-box .option-list {
+    padding: 18px 0;
+}
+.quiz-box .option-list .option[class~="bitti"] {
+    pointer-events: none;
+}
+.quiz-box .option-list .option {
+    border: 1px solid #151D3B;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.quiz-box .option-list .option:hover {
+    color: #112B2C;
+    background: #FFD33D;
+}
+.quiz-box .option-list .option.correct {
+    color: #155724;
+    background: #d4edda;
+}
+.quiz-box .option-list .option.wrong {
+    color: #721c24;
+    background: #f8d7da;
+}
+.quiz-box footer.card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.quiz-box footer.card-footer button.nextquestion{
+    transition: 300ms all;
+}
+.quiz-box footer.card-footer button.nextquestion:not([class~="show"]){
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+.quiz-box .option-list .option.disabled{
+    pointer-events: none;
+}
+.quiz-box footer.card-footer .bottom-footer{
+    display: flex;
+    gap: 15px;
+}
+.quiz-box footer.card-footer .bottom-footer .answer{
+    display: flex;
+    gap: 5px;
+}
+.quiz-box header.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    position: relative;
+}
+.quiz-box header.card-header .time-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: #151D3B;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+.quiz-box header.card-header .time-area .timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFD33D;
+    padding: 3px;
+    border-radius: 3px;
+}
+.quiz-box header.card-header div.time-liner{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #FFD33D;
+}
